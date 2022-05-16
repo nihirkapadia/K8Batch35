@@ -1,0 +1,21 @@
+Q 1
+What are the differences file-wise?
+The main difference is "KIND". 
+However, 1) apiVersion 2)containerport
+Q2
+Run the kubia-replicaset.yaml .
+NK-K8-RC.jpg
+Q3
+Identify what commands can be run after "kubectl apply...."
+
+kubectl apply -f <file(s) or Dir or URLs> -> To create resource
+kubectl apply -k -> process a customization directory
+kubectl apply -o -> Output format in json/yaml etc
+kubectl apply -l -> Selector (label query) to filter on, supports '=', '==', and '!='
+
+
+Q4
+Make a service over these pods (kubia-replicaset) and see if the service picks up the web-service within the pod ("You have hit....." message)
+
+Q5
+Negative Testing : change the labels of the pod and see if the service is still applied on those pods
