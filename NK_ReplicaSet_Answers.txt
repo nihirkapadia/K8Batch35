@@ -4,7 +4,7 @@ The main difference is "KIND".
 However, 1) apiVersion 2)containerport
 Q2
 Run the kubia-replicaset.yaml .
-NK-K8-RC.jpg
+NK-K8-RC-1.jpg
 Q3
 Identify what commands can be run after "kubectl apply...."
 
@@ -13,9 +13,27 @@ kubectl apply -k -> process a customization directory
 kubectl apply -o -> Output format in json/yaml etc
 kubectl apply -l -> Selector (label query) to filter on, supports '=', '==', and '!='
 
-
+NK-K8-RC-2.jpg
 Q4
 Make a service over these pods (kubia-replicaset) and see if the service picks up the web-service within the pod ("You have hit....." message)
 
+kubectl get pods kubia-rpf84 -o yaml -- get IP and Port
+
+[root@ip-172-31-16-53 04-controllers]# curl 192.168.177.61:8080
+You've hit kubia-rpf84
+
+NK-K8-RC-3.jpg
+
 Q5
 Negative Testing : change the labels of the pod and see if the service is still applied on those pods
+
+[root@ip-172-31-16-53 04-controllers]# kubectl get pod kubia-x5khf
+NAME          READY   STATUS    RESTARTS   AGE
+kubia-x5khf   1/1     Running   0          17m
+[root@ip-172-31-16-53 04-controllers]# kubectl get pod kubia-x5khf --show-labels
+NAME          READY   STATUS    RESTARTS   AGE   LABELS
+kubia-x5khf   1/1     Running   0          18m   app=nk
+[root@ip-172-31-16-53 04-controllers]#
+POD is still running after changing label
+
+NK-K8-RC-4.jpg
