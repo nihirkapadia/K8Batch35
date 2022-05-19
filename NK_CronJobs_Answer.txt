@@ -1,18 +1,18 @@
 go to cronjob.yaml (/root/kubernetes-training/04-controllers)
-https://github.com/nihirkapadia/K8Batch35/NK-K8-CJ-1.JPG
+https://github.com/nihirkapadia/K8Batch35/blob/main/NK-K8-CJ-1.JPG
 
 Open the file and change the 1st line to (apiVersion: batch/v1beta1).
-https://github.com/nihirkapadia/K8Batch35/NK-K8-CJ-3.JPG
+https://github.com/nihirkapadia/K8Batch35/blob/main/NK-K8-CJ-3.JPG
 
 Run this file
-https://github.com/nihirkapadia/K8Batch35/NK-K8-CJ-2.JPG
+https://github.com/nihirkapadia/K8Batch35/blob/main/NK-K8-CJ-2.JPG
 
 Find out what is the command to "get" the running jobs.
 kubectl get cronjobs --watch
 kubectl get cronjobs <jobname>
 
 Observe and if possible, paste the results from your practicals.
-https://github.com/nihirkapadia/K8Batch35/NK-K8-CJ-4.JPG
+https://github.com/nihirkapadia/K8Batch35/blob/main/NK-K8-CJ-4.JPG
 
 Also identify how you would "permanently arrest" the jobs from running.
 kubectl patch cronjobs <job name> -p '{\"spec\" : {\"suspend\" : true }}'
